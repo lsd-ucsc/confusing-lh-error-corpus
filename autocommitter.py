@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+import getpass # to find the username (to use as branch name)
 import subprocess
 
 def handler():
@@ -14,6 +15,11 @@ def handler():
     if wtfs:
         print('\n'.join(wtfs))
 
+    # check out a user-specific branch
+    try:
+        subprocess.check_call(['git', 'checkout', '-b', getpass.getuser()], stderr=subprocess.DEVNULL)
+    except subprocess.CalledProcessError:
+        subprocess.check_call(['git', 'checkout', getpass.getuser()], stderr=subprocess.DEVNULL)
     # add changes; expect it to succeed
     subprocess.check_call(['git', 'add', '--no-all', '.'])
     # commit; don't care if it succeeds/fails (it will fail if there were no changes to files)

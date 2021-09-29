@@ -13,7 +13,7 @@ module Imp where
 import           Prelude hiding ((++)) 
 import           ProofCombinators
 import qualified State as S
-import           Expressions -- hiding (And)
+import           ExpressionsHw5Hw6 -- hiding (And)
 
 --------------------------------------------------------------------------------
 -- | IMP Commands

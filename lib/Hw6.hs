@@ -13,7 +13,7 @@ import           Prelude hiding ((++))
 import           ProofCombinators
 import qualified State as S
 import qualified Data.Set as S
-import           Expressions 
+import           ExpressionsHw5Hw6
 import           Imp
 
 --------------------------------------------------------------------------------

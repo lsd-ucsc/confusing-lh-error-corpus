@@ -5,7 +5,7 @@
 
 {-# LANGUAGE PartialTypeSignatures #-}
 
-module Expressions where
+module ExpressionsHw4 where
 
 import           Prelude hiding ((++), const, sum) 
 import qualified State as S 

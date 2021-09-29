@@ -9,7 +9,7 @@ module Hw4 where
 
 import           Prelude hiding ((++)) 
 import           ProofCombinators 
-import           Expressions 
+import           ExpressionsHw4
 import qualified State as S 
 
 --------------------------------------------------------------------------------

@@ -4,7 +4,7 @@
 
 {-# LANGUAGE PartialTypeSignatures #-}
 
-module Expressions where
+module ExpressionsHw5Hw6 where
 
 import qualified State as S 
 import ProofCombinators 

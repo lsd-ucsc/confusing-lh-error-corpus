@@ -1,0 +1,11 @@
+*.cabal
+*.svg
+*.swp
+.liquid/
+Setup.hs
+dist-newstyle/
+dist/
+*.svg
+*.gif
+result
+build-env*

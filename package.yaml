@@ -1,0 +1,16 @@
+name: confusing-lh-error-corpus
+
+dependencies:
+    - liquid-base
+    - liquid-containers
+    - liquid-prelude
+    - liquidhaskell
+
+ghc-options:
+    - -Wall
+
+library:
+    source-dirs: lib
+    ghc-options:
+        - -fno-warn-incomplete-patterns # liquidhaskell aready does this for us
+        - -fplugin=LiquidHaskell

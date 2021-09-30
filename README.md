@@ -4,24 +4,37 @@ This repo contains a LiquidHaskell project incorporating @ranjitjhala's
 homeworks from his CSE230 Wi19 course.
 
 Additionally, there's a script `autocommitter.py` which will watch all the
-files in the repo, and commit whenever you change them. The script has two
-interesting features:
+files in the repo, and commit to a branch whenever you make changes.
+It's recommended that you run the autocommitter script in a terminal, and then
+edit the files in your normal editor with your normal compilation tools or IDE
+tools.
+In this way, you can track your own edit history of LH proofs.
 
-* It always checks out a branch with your current user's username before
-  committing. In this way, many people can share the same repo easily because
-  we'll be committing to distinct branches.
-* If you include "WTF" in a Haskell comment starting with `--` on a line of its
-  own, the autocommitter script will include the text of your comment in the
-  commit message and then delete the comment. For example, if you have a
-  problem while writing a proof and you make a comment:
+The autocommitter script has two interesting features:
+
+* **Commits to a branch:** The script always checks out a branch with your
+  current user's username before committing. In this way, many people can share
+  the same repo easily because we'll be committing to distinct branches.
+* **Easily mark interesting commits:** If you include "WTF" in a Haskell
+  comment starting with `--` on a line of its own, the autocommitter script
+  will include the text of your comment in the commit message and then delete
+  the comment. In this way you can easily mark the commits for later
+  examination.
+
+  For example, while writing a proof if you make a comment like the following:
   ```haskell
   blah :: { 1 + 1 == 2 }
   blah = ()
   -- why does SMT think one plus one is two, WTF
   ```
-  When you save the file, the autocommitter script will include this comment in
-  the commit message and delete the comment from the file. It's recommended
-  that you configure your editor to auto-reload changed files.
+  Then, when you save the file, the autocommitter script will include this
+  comment in the commit message and delete the comment from the file. It's
+  recommended that you configure your editor to auto-reload changed files.
+
+The autocommitter script has a few dependencies: python3,
+[entr](https://github.com/eradman/entr#event-notify-test-runner) (to watch for
+file changes), find, grep, sed, and git. Most linux distros distribute **entr**
+by now, but not all. It is also on homebrew, for macs.
 
 ## Sources
 

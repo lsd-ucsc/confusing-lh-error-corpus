@@ -49,7 +49,7 @@ sub' x y
 -- | Problem 4: Write a signature for `halve` so that `problem4` typechecks
 -----------------------------------------------------------------------------
 
-{-@ halve :: Int -> (Int, Int) @-}
+{-@ halve :: i:Int -> ({j:Int | j == div i 2}, {r:Int | r == mod i 2) @-}
 halve :: Int -> (Int, Int)
 halve i = (j, j + r)
   where

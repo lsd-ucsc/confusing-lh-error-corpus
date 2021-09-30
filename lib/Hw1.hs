@@ -41,7 +41,9 @@ sub x y = x - y
 
 {-@ sub' :: Nat -> Nat -> Maybe Nat @-}
 sub' :: Int -> Int -> Maybe Int 
-sub' x y = Just (x - y)
+sub' x y
+    | x >= y = Just (x - y)
+    | otherwise = Nothing
 
 -----------------------------------------------------------------------------
 -- | Problem 4: Write a signature for `halve` so that `problem4` typechecks

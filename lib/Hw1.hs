@@ -49,6 +49,8 @@ sub' x y
 -- | Problem 4: Write a signature for `halve` so that `problem4` typechecks
 -----------------------------------------------------------------------------
 
+{-@ LIQUID "--exact-data" @-}
+-- WTF why are there parsing errors in the signature? i'll try adding --exact-data
 {-@ halve :: i:Int -> (Int, Int)<{\j1 j2 -> j1 == div i 2 && j2 == j1 + mod i 2}> @-}
 halve :: Int -> (Int, Int)
 halve i = (j, j + r)

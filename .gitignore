@@ -10,3 +10,4 @@ dist/
 result
 build-env*
 __pycache__
+.stack-work/

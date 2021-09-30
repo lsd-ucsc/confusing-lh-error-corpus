@@ -53,6 +53,7 @@ sub' x y
 {-@ LIQUID "--exact-data-cons" @-}
 {-@ LIQUID "--no-adt" @-}
 {-@ LIQUID "--reflection" @-}
+-- WTF why does == give a parse error until changed to =? why does + give a parse error?
 {-@ halve :: i:Int -> (Int, Int)<{\j1 j2 -> j1 = div i 2 && j2 = j1 + mod i 2}> @-}
 halve :: Int -> (Int, Int)
 halve i = (j, j + r)

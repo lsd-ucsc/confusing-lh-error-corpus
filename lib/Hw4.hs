@@ -12,6 +12,14 @@ import           ProofCombinators
 import           ExpressionsHw4
 import qualified State as S 
 
+{-@ ignore lem_Step @-}
+{-@ ignore lem_RStep @-}
+{-@ ignore lem_RPath_trans @-}
+{-@ ignore lem_path_rpath @-}
+{-@ ignore lem_rpath_path @-}
+{-@ ignore lem_LvRel_lval @-}
+{-@ ignore lem_lval_LvRel @-}
+
 --------------------------------------------------------------------------------
 -- | Q1 : Relations 
 --------------------------------------------------------------------------------
@@ -30,7 +38,7 @@ data Path a where
 
 {-@ data Path a where
       Refl :: r:Rel a -> x:a -> Prop (Path r x x)
-    | Step :: r:Rel a -> x:a -> y:{a | r x y} -> z:a -> Prop (Path r y z) -> Prop (Path r x z)
+      Step :: r:Rel a -> x:a -> y:{a | r x y} -> z:a -> Prop (Path r y z) -> Prop (Path r x z)
   @-}
 
 -- | paths-are-transitive (as discussed in lecture) 
@@ -57,7 +65,7 @@ data RPath a where
 
 {-@ data RPath a where
       RRefl :: r:Rel a -> x:a -> Prop (RPath r x x)
-    | RStep :: r:Rel a -> x:a -> y:a -> z:{a | r y z} -> Prop (RPath r x y) -> Prop (RPath r x z)
+      RStep :: r:Rel a -> x:a -> y:a -> z:{a | r y z} -> Prop (RPath r x y) -> Prop (RPath r x z)
   @-}
 
 {- That is, there are two ways/rules to build an Right-Path `RPath` 
@@ -122,13 +130,13 @@ data LvRel where
 {-@ data LvRel where
       LvRelN :: s:_ -> n:_ 
 	     -> Prop (LvRel s (LN n) n) 
-    | LvRelV :: s:_ -> x:_ 
+      LvRelV :: s:_ -> x:_ 
 	     -> Prop (LvRel s (LV x) (S.get s x)) 
-    | LvRelP :: s:_ -> e1:_ -> n1:_ -> e2:_ -> n2:_ 
+      LvRelP :: s:_ -> e1:_ -> n1:_ -> e2:_ -> n2:_ 
              -> Prop (LvRel s e1 n1) 
              -> Prop (LvRel s e2 n2)
              -> Prop (LvRel s {LPlus e1 e2} {n1 + n2})
-    | LvRelL :: s:_ -> x:_ -> e1:_ -> n1:_ -> e2:_ -> n2:_ 
+      LvRelL :: s:_ -> x:_ -> e1:_ -> n1:_ -> e2:_ -> n2:_ 
              -> Prop (LvRel s e1 n1)
              -> Prop (LvRel (S.set s x n1) e2 n2)
              -> Prop (LvRel s (LLet x e1 e2) n2)

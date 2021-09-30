@@ -8,6 +8,12 @@ import           Prelude hiding ((++), const, sum)
 import           ProofCombinators
 import qualified State as S 
 
+{-@ ignore lem_full_asimp @-}
+{-@ ignore lem_inlyne @-}
+{-@ ignore lem_is_opt @-}
+{-@ ignore lem_nnf @-}
+{-@ ignore lem_subst @-}
+
 --------------------------------------------------------------------------------
 -- | Arithmetic Expressions 
 --------------------------------------------------------------------------------

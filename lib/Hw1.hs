@@ -3,13 +3,6 @@ module Hw1 where
 import Prelude hiding (lookup, reverse, abs, repeat, map, length, head, take, drop)
 import qualified Data.Set as S
 
-{-@ ignore last @-}
-{-@ ignore sub' @-}
-{-@ ignore take @-}
-{-@ ignore problem4 @-}
-{-@ ignore problem6 @-}
-{-@ ignore problem7 @-}
-
 -----------------------------------------------------------------------------
 -- | Problem 1 : Fix the refined type of `abs` so that `problem1` type checks 
 -----------------------------------------------------------------------------

@@ -6,7 +6,6 @@ import qualified Data.Set as S
 -----------------------------------------------------------------------------
 -- | Problem 1 : Fix the refined type of `abs` so that `problem1` type checks 
 -----------------------------------------------------------------------------
--- WTF: This problem was already completed
 
 {-@ abs :: Int -> Nat @-}
 abs :: Int -> Int
@@ -24,7 +23,6 @@ problem1 ((x1, x2) : rest)  = abs (x1 - x2) + problem1 rest
 -- Problem 2: Fix the signature for `sub` so it implements subtraction 
 --            restricted to (suitable) natural numbers.
 -----------------------------------------------------------------------------
--- WTF: This problem was already completed
 
 {-@ sub :: x:Nat -> {y:Nat | y <= x} -> Nat @-}
 sub :: Int -> Int -> Int 
@@ -74,7 +72,7 @@ problem4   = a + b
 -- >>> take 3 (Cons 1 (Cons 2 (Cons 3 (Cons 4 Nil))))
 -- Cons 1 (Cons 2 (Cons 3 Nil))
 
-{-@ take :: i:Nat -> List a -> { ys : List a | length ys == i } @-}
+{-@ take :: i:Nat -> {xs:List a | i <= length xs} -> { ys : List a | length ys == i } @-}
 take :: Int -> List a -> List a
 take _ Nil         = Nil
 take 0 _           = Nil

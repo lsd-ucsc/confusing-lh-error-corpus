@@ -74,7 +74,6 @@ problem4   = a + b
 
 {-@ take :: i:Nat -> {xs:List a | i <= length xs} -> { ys : List a | length ys == i } @-}
 take :: Int -> List a -> List a
-take _ Nil         = Nil
 take 0 _           = Nil
 take i (Cons x xs) = x `Cons` take (i - 1) xs
 

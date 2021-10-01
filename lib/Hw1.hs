@@ -85,7 +85,7 @@ take i (Cons x xs) = x `Cons` take (i - 1) xs
 --              the first `n` elements of a list.
 -----------------------------------------------------------------------------
 
-{-@ drop :: Int -> List a -> List a @-}
+{-@ drop :: i:Nat -> {xs:List a | i <= length xs} -> {ys:List a | length ys == length xs - i} @-}
 drop :: Int -> List a -> List a
 drop _ Nil         = Nil
 drop 0 xs          = xs

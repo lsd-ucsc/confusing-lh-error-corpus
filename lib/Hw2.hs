@@ -29,7 +29,13 @@ thm_add_assoc Z y z
     === add y z
     === add (add Z y) z
     *** QED
-thm_add_assoc (S x) y z = () *** Admit
+thm_add_assoc (S x) y z
+    =   add (S x) (add y z)
+    === S (add x (add y z))
+        ? thm_add_assoc x y z
+    === S (add (add x y) z)
+    *** Admit
+
 
 ---- --------------------------------------------------------------------------------
 ---- -- | Problem 2: Fill in the implementation of `thm_double` to prove that `double` 

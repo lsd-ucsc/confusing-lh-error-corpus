@@ -51,7 +51,10 @@ double (S n) = S (S (double n))
 {-@ thm_double :: n:Peano -> { double n = add n n } @-}
 thm_double :: Peano -> Proof 
 thm_double Z
-    = () *** Admit
+    =   double Z
+    === Z
+    === add Z Z
+    *** QED
 thm_double (S n)
     = () *** Admit
 

@@ -116,7 +116,7 @@ problem7 = sublist 1 2 (1 `Cons` 2 `Cons` 3 `Cons` 4 `Cons` Nil)
 --              must ensure that `last` defined below also typechecks.
 -----------------------------------------------------------------------------
 
-{-@ reverse :: List a -> List a @-}
+{-@ reverse :: xs:List a -> {ys:List a | length xs == length ys} @-}
 reverse :: List a -> List a 
 reverse xs = impossible "TBD: reverse"
 

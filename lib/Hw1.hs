@@ -90,9 +90,9 @@ drop :: Int -> List a -> List a
 drop _ Nil         = Nil
 drop 0 xs          = xs
 drop i (Cons _ xs) = drop (i - 1) xs
-drop _ _           = impossible "drop"
 
 {-@ problem6 :: {v:_ | length v == 2} @-}
+problem6 :: List String
 problem6 = drop 2 (Cons "i" (Cons "am" (Cons "the" (Cons "walrus" Nil))))
 
 -----------------------------------------------------------------------------

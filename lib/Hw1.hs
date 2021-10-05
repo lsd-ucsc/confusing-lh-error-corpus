@@ -144,6 +144,7 @@ lookup k (Bind k' v r)
   | k == k'            = v
   | otherwise          = lookup k r
 lookup _ Empty         = impossible "lookup: Empty"
+-- WTF this exercise was already completed
 
 ----------------------------------------------------------------------------------
 -- | Problem 10: Consider the following `Expr`ession type; can you fix the spec
@@ -162,6 +163,7 @@ eval :: Table String Int -> Expr -> Int
 eval _   (ENum n)     = n 
 eval env (EVar x)     = lookup x env 
 eval env (EAdd e1 e2) = eval env e1 + eval env e2 
+-- WTF this exercise was already completed; it seems LH knows the size of Expr without any measure
 
 problem10 :: Int
 problem10 = eval env10 exp10 

@@ -39,20 +39,20 @@ thm_add_assoc (S x) y z
     *** QED
 
 
----- --------------------------------------------------------------------------------
----- -- | Problem 2: Fill in the implementation of `thm_double` to prove that `double` 
----- --              is equivalent to adding a number to itself.
----- --------------------------------------------------------------------------------
----- 
----- {-@ reflect double @-}
----- double :: Peano -> Peano 
----- double Z     = Z 
----- double (S n) = S (S (double n))
----- 
----- {-@ thm_double :: n:Peano -> { double n = add n n } @-}
----- thm_double :: Peano -> Proof 
----- thm_double = impossible "TBD" 
----- 
+--------------------------------------------------------------------------------
+-- | Problem 2: Fill in the implementation of `thm_double` to prove that `double` 
+--              is equivalent to adding a number to itself.
+--------------------------------------------------------------------------------
+
+{-@ reflect double @-}
+double :: Peano -> Peano 
+double Z     = Z 
+double (S n) = S (S (double n))
+
+{-@ thm_double :: n:Peano -> { double n = add n n } @-}
+thm_double :: Peano -> Proof 
+thm_double = impossible "TBD" 
+
 ---- --------------------------------------------------------------------------------
 ---- -- | Problem 3: `itadd` is a "tail-recursive" implementation of `add`: prove 
 ---- --              that `itadd` is equivalent to `add`. 

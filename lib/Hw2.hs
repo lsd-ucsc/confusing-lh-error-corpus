@@ -27,6 +27,7 @@ thm_add_assoc :: Peano -> Peano -> Peano -> Proof
 thm_add_assoc Z y z
     =   add Z (add y z)
     === add y z
+    === add (add Z y) z
     *** QED
 thm_add_assoc (S x) y z = () *** Admit
 

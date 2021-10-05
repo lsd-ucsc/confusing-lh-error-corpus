@@ -101,7 +101,7 @@ problem6 = drop 2 (Cons "i" (Cons "am" (Cons "the" (Cons "walrus" Nil))))
 --              so that both `sublist` and `problem7` verify.
 -----------------------------------------------------------------------------
 
-{-@ sublist :: s:Int -> l:Nat -> {xs:List a | l <= length s} -> List a @-}
+{-@ sublist :: s:Int -> l:Nat -> {xs:List a | l <= length xs} -> List a @-}
 sublist :: Int -> Int -> List a -> List a
 sublist s l xs = take l (drop s xs)
 

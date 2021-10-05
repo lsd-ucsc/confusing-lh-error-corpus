@@ -24,7 +24,10 @@ add (S n) m = S (add n m)
 
 {-@ thm_add_assoc :: x:_ -> y:_ -> z:_ -> { add x (add y z) == (add (add x y) z) } @-}
 thm_add_assoc :: Peano -> Peano -> Peano -> Proof 
-thm_add_assoc Z y z = () *** Admit
+thm_add_assoc Z y z
+    =   add Z (add y z)
+    === add y z
+    *** QED
 thm_add_assoc (S x) y z = () *** Admit
 
 ---- --------------------------------------------------------------------------------

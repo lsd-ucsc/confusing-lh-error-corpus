@@ -57,7 +57,7 @@ thm_double Z
     *** QED
 thm_double (S n)
     =   double (S n)
-    === S (S (double n)
+    === S (S (double n))
     ==.
         S (add n (S n))
     === add (S n) (S n)

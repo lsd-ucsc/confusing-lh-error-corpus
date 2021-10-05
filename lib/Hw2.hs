@@ -56,7 +56,12 @@ thm_double Z
     === add Z Z
     *** QED
 thm_double (S n)
-    = () *** Admit
+    =   double (S n)
+    === S (S (double n)
+    ==.
+        S (add n (S n))
+    === add (S n) (S n)
+    *** Admit
 
 ---- --------------------------------------------------------------------------------
 ---- -- | Problem 3: `itadd` is a "tail-recursive" implementation of `add`: prove 

@@ -118,7 +118,8 @@ problem7 = sublist 1 2 (1 `Cons` 2 `Cons` 3 `Cons` 4 `Cons` Nil)
 
 {-@ reverse :: xs:List a -> {ys:List a | length xs == length ys} @-}
 reverse :: List a -> List a 
-reverse xs = impossible "TBD: reverse"
+reverse Nil = Nil
+reverse (Cons x xs) = undefined
 
 {-@ last :: {v:List a | length v > 0} -> a @-}
 last :: List a -> a 

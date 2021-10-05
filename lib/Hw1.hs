@@ -121,6 +121,10 @@ reverse :: List a -> List a
 reverse Nil = Nil
 reverse (Cons x xs) = reverse xs `snoc` x
 
+snoc :: List a -> a -> List a
+snoc Nil y = Cons y Nil
+snoc (Cons x xs) y = Cons x (xs `snoc` y)
+
 {-@ last :: {v:List a | length v > 0} -> a @-}
 last :: List a -> a 
 last xs = head (reverse xs)

@@ -34,6 +34,7 @@ thm_add_assoc (S x) y z
     === S (add x (add y z))
         ? thm_add_assoc x y z
     === S (add (add x y) z)
+    === add (S (add x y)) z
     *** Admit
 
 

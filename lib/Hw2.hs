@@ -6,14 +6,6 @@ module Hw2 where
 
 import ProofCombinators
 
-{-@ ignore q6 @-}
-{-@ ignore thm_add_assoc @-}
-{-@ ignore thm_double @-}
-{-@ ignore thm_itadd @-}
-{-@ ignore thm_itrev @-}
-{-@ ignore thm_mirror @-}
-{-@ ignore thm_mirror_contents @-}
-
 --------------------------------------------------------------------------------
 -- | Recall the `Peano` datatype from class
 --------------------------------------------------------------------------------

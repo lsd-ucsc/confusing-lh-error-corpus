@@ -15,7 +15,7 @@ abs x
 
 {-@ problem1 :: _  -> Nat @-}
 problem1 :: [(Int, Int)] -> Int 
-problem1 [] 	            = 0 
+problem1 []                 = 0 
 problem1 ((x1, x2) : rest)  = abs (x1 - x2) + problem1 rest 
 
 
@@ -119,7 +119,7 @@ problem7 = sublist 1 2 (1 `Cons` 2 `Cons` 3 `Cons` 4 `Cons` Nil)
 {-@ reverse :: xs:List a -> {ys:List a | length xs == length ys} @-}
 reverse :: List a -> List a 
 reverse Nil = Nil
-reverse (Cons x xs) = undefined
+reverse (Cons x xs) = reverse xs `snoc` x
 
 {-@ last :: {v:List a | length v > 0} -> a @-}
 last :: List a -> a 

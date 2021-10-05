@@ -35,7 +35,8 @@ thm_add_assoc (S x) y z
         ? thm_add_assoc x y z
     === S (add (add x y) z)
     === add (S (add x y)) z
-    *** Admit
+    === add (add (S x) y) z
+    *** QED
 
 
 ---- --------------------------------------------------------------------------------

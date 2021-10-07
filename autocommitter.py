@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import sys
 import getpass # to find the username (to use as branch name)
 import subprocess
@@ -7,6 +8,10 @@ import subprocess
 def handler():
     # a comment on its own line containing "WTF"
     wtf_pattern = r'^\s*-- .*WTF.*'
+    # a sed command to remove WTF comments
+    sed_cmd = ['sed', '-e', f'/{wtf_pattern}/d', '-i', ''] \
+            if 'Darwin' in os.uname() else \
+            ['sed', f'/{wtf_pattern}/d', '-i']
 
     # search out haskell files; expect it to succeed
     sources = subprocess.check_output(['find', './lib/', '-name', '*.hs']).decode('utf8').strip().splitlines()
@@ -27,7 +32,7 @@ def handler():
 
     if wtfs:
         # remove WTF notes; expect it to succeed
-        subprocess.check_call(['sed', f'/{wtf_pattern}/d', '-i'] + [wtf.partition(':')[0] for wtf in wtfs])
+        subprocess.check_call(sed_cmd + [wtf.partition(':')[0] for wtf in wtfs])
 
 if __name__ == '__main__' and sys.argv[1:]: # any arguments
     handler()

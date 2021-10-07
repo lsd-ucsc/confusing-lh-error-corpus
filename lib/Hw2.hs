@@ -59,6 +59,7 @@ thm_double (S n)
     =   double (S n)
     === S (S (double n))
     ==.
+    -- WTF this is where it would be nice to have a subgoal or some guidance
         S (add n (S n))
     === add (S n) (S n)
     *** Admit

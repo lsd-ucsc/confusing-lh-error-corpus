@@ -7,7 +7,7 @@ import subprocess
 
 def handler():
     # a comment on its own line containing "WTF"
-    wtf_pattern = r'^\s*-- .*WTF.*'
+    wtf_pattern = r'^\s*--.*WTF.*'
     # a sed command to remove WTF comments
     sed_cmd = ['sed', '-e', f'/{wtf_pattern}/d', '-i', ''] \
             if 'Darwin' in os.uname() else \

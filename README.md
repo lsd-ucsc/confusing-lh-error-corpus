@@ -1,10 +1,23 @@
-# Liquid Haskell experiences collection repo
+# Liquid Haskell experiences-collection repo
 
 This repo contains a LiquidHaskell project incorporating @ranjitjhala's
-homeworks from his CSE230 Wi19 course.
+homeworks from his CSE230 Wi19 course. The goal of this repo is to collect
+LiquidHaskell users' experiences *into this repo* by recording writes made to
+files and committing them automatically.
 
-Additionally, there's a script `autocommitter.py` which will watch all the
-files in the repo, and commit to a branch whenever you make changes.
+## Getting started
+
+1. `git clone ...` this repo to your computer.
+1. Run `autocommitter.py`. It will check out a branch and commit every write
+   you make to files in the repo.
+1. While the autocommitter continues to run, edit files in the repo using your
+   normal LiquidHaskell compiler and editor flow.
+1. When you're all done, stop the autocommitter and push you branch.
+
+## Autocomitter details
+
+The `autocommitter.py` script which will watch all the files in the repo, and
+commit to a branch whenever you make changes.
 It's recommended that you run the autocommitter script in a terminal, and then
 edit the files in your normal editor with your normal compilation tools or IDE
 tools.
@@ -14,7 +27,7 @@ The autocommitter script has two interesting features:
 
 * **Commits to a branch:** The script always checks out a branch with your
   current user's username before committing. In this way, many people can share
-  the same repo easily because we'll be committing to distinct branches.
+  the same repo easily without mistakenly committing to each other's branches.
 * **Easily mark interesting commits:** If you include "WTF" in a Haskell
   comment starting with `--` on a line of its own, the autocommitter script
   will include the text of your comment in the commit message and then delete

@@ -12,13 +12,13 @@ files and committing them automatically.
    you make to files in the repo.
 1. While the autocommitter continues to run, edit files in the repo using your
    normal LiquidHaskell compiler and editor flow.
-1. When you're all done, stop the autocommitter and push you branch.
+1. When you're all done, stop the autocommitter and push your branch.
 
 ## Autocomitter details
 
-The `autocommitter.py` script which will watch all the files in the repo, and
+The `autocommitter.py` script will watch all the files in the repo, and
 commit to a branch whenever you make changes.
-It's recommended that you run the autocommitter script in a terminal, and then
+It is recommended that you run the autocommitter script in a terminal, and then
 edit the files in your normal editor with your normal compilation tools or IDE
 tools.
 In this way, you can track your own edit history of LH proofs.

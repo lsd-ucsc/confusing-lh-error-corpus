@@ -1,9 +1,11 @@
-# Liquid Haskell experiences-collection repo
+# Liquid Haskell confusing error corpus repo
 
 This repo contains a LiquidHaskell project incorporating @ranjitjhala's
-homeworks from his CSE230 Wi19 course. The goal of this repo is to collect
-LiquidHaskell users' experiences *into this repo* by recording writes made to
-files and committing them automatically.
+homeworks from his CSE230 Wi19 course. The goal of this repo is to collect a
+corpus of Liquid Haskell programs that generate type errors which users find
+confusing. It works by recording the writes made to files and committing them
+automatically. Our goal is to use this corpus to improve the Liquid Haskell
+proof-engineering experience.
 
 ## Getting started
 

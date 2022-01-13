@@ -9,7 +9,7 @@ proof-engineering experience.
 
 ## Setup: Liquid Haskell & Autocomitter
 
-* Liquid Haskell: Choose `stack`, `nix`, or `cabal`.
+* **Liquid Haskell**: Choose `stack`, `nix`, or `cabal`.
   * `stack build --file-watch` should just work.
   * `nix build` should just work. You can also do incremental compilation in a
     `nix develop` development by running `make entr-build` or `make ghcid`. If
@@ -21,7 +21,7 @@ proof-engineering experience.
     [lh-plugin-demo](https://github.com/ucsd-progsys/lh-plugin-demo) (or create
     an issue on the repo it'll get added).
 
-* Autocommitter script dependencies
+* **Autocommitter**: Install script dependencies.
   * [entr](https://github.com/eradman/entr#event-notify-test-runner) to watch
     for file changes. Most linux distros distribute **entr** by now, but not
     all. It is also on homebrew, for macs.
